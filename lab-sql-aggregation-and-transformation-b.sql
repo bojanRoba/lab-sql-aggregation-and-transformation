@@ -13,7 +13,7 @@ FROM sakila.film;
 
 -- 1.2. Express the average movie duration in hours and minutes. Don't use decimals. Hint: Look for floor and round functions.
 
-SELECT AVG(length), CONCAT(FLOOR(AVG(length)/60),':',LPAD(MOD(AVG(length),60),2,'0')) as duration 
+SELECT AVG(length), CONCAT(FLOOR(AVG(length)/60),':',ROUND(MOD(AVG(length),60),2)) as duration 
 FROM sakila.film;
 
 -- You need to gain insights related to rental dates:
